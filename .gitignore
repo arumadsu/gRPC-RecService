@@ -1,0 +1,14 @@
+#py
+__pycache__/
+*.pyc
+*.pyo
+
+#virt env
+.venv/
+venv
+
+#pyCharm
+.idea/
+
+#os
+.DS_Store
