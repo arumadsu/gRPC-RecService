@@ -18,11 +18,11 @@ books_by_category = {
         BookRecommendation(id=3, title="The Hound of the Baskervilles"),
     ],
 
-    BookCategory.SCINCE_FICTION: [
+    BookCategory.SCIENCE_FICTION: [
         BookRecommendation(
             id=4, title="The Hitchhiker's Guide to the Galaxy"
         ),
-        BookRecommendation("Ender's Game"),
+        BookRecommendation(id=5, title="Ender's Game"),
         BookRecommendation(id=6, title="The Dune Chronicles"),
     ],
 
@@ -47,13 +47,13 @@ class RecommendationService(
         if request.category not in books_by_category:
             context.abort(grpc.StatusCode.NOT_FOUND, "Category not found")
 
-            books_for_category = books_by_category[request.category]
-            num_results = min(request.max_result, len(books_for_category))
-            books_to_recommend = random.sample(
-                books_for_category, num_results
-            )
+        books_for_category = books_by_category[request.category]
+        num_results = min(request.max_results, len(books_for_category))
+        books_to_recommend = random.sample(
+            books_for_category, num_results
+        )
 
-            return RecommendationResponse(recommendations=books_to_recommend)
+        return RecommendationResponse(recommendations=books_to_recommend)
 
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
