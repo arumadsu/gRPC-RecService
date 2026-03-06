@@ -1,10 +1,14 @@
-<!DOCTYPE html>
+<!-- homepage.html -->
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Only Books For You</title>
 </head>
 <body>
-
+    <h1>Mystery books you may like</h1>
+    <ul>
+        {% for book in recommendations %}
+            <li>{{ book.title }}</li>
+        {% endfor %}
+    </ul>
 </body>
-</html>
