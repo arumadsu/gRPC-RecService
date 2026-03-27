@@ -8,6 +8,8 @@ enum BookCategory {
 
 message RecommendationRequest {
   int32 user_id = 1;
+//  Что можно сделать с user_id?
+
   BookCategory category = 2;
   int32 max_results = 3;
 }

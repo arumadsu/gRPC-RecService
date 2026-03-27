@@ -1,14 +1,25 @@
-#py
-__pycache__/
-*.pyc
-*.pyo
+# Logs and empty files
+*.log
+*.tmp
+temp/
 
-#virt env
-.venv/
-venv
 
-#pyCharm
-.idea/
-
-#os
+# System files
 .DS_Store
+
+.vscode
+.idea
+
+instance/
+*.db
+*.sqlite3
+
+.venv/
+venv/
+env/
+
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so

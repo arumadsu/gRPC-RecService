@@ -23,6 +23,8 @@ def render_homepage():
     recommendations_response = recommendations_client.Recommend(
         recommendations_request
     )
+    # Сделать анализ респонса. Сейчас выводит даже если вернется ошибка.
+    # Сделать проверку на стороне клиента, что запрошенные данные соответсвуют на сервере и вернуть сообщение, если не соответсвуют
 
     return render_template(
         "homepage.html",
